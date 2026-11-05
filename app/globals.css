@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg-beige-start: #E6DAC8;
+  --bg-beige-end: #DFD2BE;
+  --bg-cream: #EFE6D8;
+  --text-espresso: #1C1917;
+  --text-taupe: #6E655F;
+  --accent-obsidian: #141413;
+  --accent-white: #FFFFFF;
+  --border-warm: rgba(28, 25, 23, 0.12);
+}
+
+/* Lenis Smooth Scroll recommended rules */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Hide native scrollbars while preserving smooth scroll */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background-color: var(--bg-beige-start);
+  color: var(--text-espresso);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-beige-start) 0%, var(--bg-beige-end) 100%);
+  color: var(--text-espresso);
+  overflow-x: hidden;
+  selection-background-color: #141413;
+  selection-color: #FFFFFF;
+}
+
+::selection {
+  background-color: #141413;
+  color: #FFFFFF;
+}
+
+/* Subtle luxury glassmorphism on warm studio beige */
+.studio-glass {
+  background: rgba(230, 218, 200, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Hide scrollbar for horizontal pill bars on mobile */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.studio-card-gradient {
+  background: radial-gradient(
+    circle at 70% 40%,
+    #ECE2D2 0%,
+    #E3D6C3 60%,
+    #DACB8600 100%
+  ),
+  linear-gradient(160deg, #EAE0D0 0%, #DDD0BC 100%);
+}
+
+@keyframes soundWave {
+  0%, 100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-sound-bar-1 {
+  animation: soundWave 0.9s ease-in-out infinite;
+}
+.animate-sound-bar-2 {
+  animation: soundWave 0.9s ease-in-out 0.2s infinite;
+}
+.animate-sound-bar-3 {
+  animation: soundWave 0.9s ease-in-out 0.4s infinite;
+}
+.animate-sound-bar-4 {
+  animation: soundWave 0.9s ease-in-out 0.15s infinite;
+}
